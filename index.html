@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funky Movie Recommender</title>
+    <style>
+        body {
+            background: linear-gradient(45deg, #ff6347, #ff4500, #ff1493, #ff69b4);
+            background-size: 400% 400%;
+            animation: gradient-animation 10s ease infinite;
+            font-family: 'Comic Sans MS', sans-serif;
+            color: #fff;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        @keyframes gradient-animation {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #ff4500;
+            font-family: 'Comic Sans MS', sans-serif;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar h2 .icon {
+            font-size: 2rem;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+            padding: 40px;
+            text-align: center;
+            width: 350px;
+            margin-top: 100px; /* Add margin to avoid overlap with navbar */
+        }
+
+        h1 {
+            color: #ff4500;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        textarea {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            resize: none;
+            height: 150px;
+            background-color: #f4f4f9;
+            transition: 0.3s ease;
+        }
+
+        textarea:focus {
+            background-color: #fff3e6;
+            border: 2px solid #ff4500;
+        }
+
+        button {
+            background-color: #ff4500;
+            color: #fff;
+            font-size: 1.2rem;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff6347;
+            transform: scale(1.05);
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2><span class="icon">🎥</span> CineRecall</h2>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1> Movie Recommender</h1>
+        <form action="/recommend" method="POST">
+            <textarea name="plot" placeholder="Describe the plot of the movie... e.g., A mind-bending thriller about dream manipulation." required></textarea><br><br>
+            <button type="submit">Get Recommendations</button>
+        </form>
+        <div class="footer">
+            <p>Powered by Movie Magic 💫</p>
+        </div>
+    </div>
+</body>
+</html>
